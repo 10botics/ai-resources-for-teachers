@@ -1,0 +1,82 @@
+# AI FAQ Site Rules
+
+## General Guidelines
+- Site is written in Traditional Chinese (繁體中文)
+- Use Astro framework with Tailwind CSS
+- Site is deployed to GitHub Pages at `/ai-resources-for-teachers/` base path
+
+## FAQ Management
+
+### Adding New FAQs
+**CRITICAL: ALWAYS append new FAQs to the END of the array. NEVER rearrange the order.**
+
+Reason: Each FAQ has an anchor link based on its position (e.g., `#faq-1`, `#faq-2`). Rearranging questions will break existing shared links.
+
+### FAQ Structure
+```javascript
+{
+  question: "問題文字",
+  answer: "回答文字",
+  source: "https://source-url.com" // Optional: include if citing external source
+}
+```
+
+### FAQ File Locations
+- Gemini FAQs: `src/pages/faq/gemini.astro`
+- NotebookLM FAQs: `src/pages/faq/notebooklm.astro`
+- Google Workspace FAQs: `src/pages/faq/google-workspace.astro`
+
+### When Adding Source Citations
+- Include `source` field with full URL
+- Template will automatically display "查看來源" link
+- Mention source in answer text (e.g., "資料來源：Google Workspace for Education 官方文檔")
+
+## Resource Showcase
+
+### Adding New Resources
+Resources are listed in `src/pages/index.astro`
+
+Structure:
+```javascript
+{
+  title: "資源標題",
+  author: "作者名稱",
+  description: "詳細描述，可包含使用的工具和技術",
+  link: "https://demo-url.com", // GitHub Pages or live demo
+  github: "https://github.com/user/repo", // Optional
+  tags: ["Tag1", "Tag2", "Tag3"] // Max 3-4 tags
+}
+```
+
+### Resource Guidelines
+- Get author approval before adding their projects
+- Include both demo link and GitHub link when available
+- Mention if created using AI tools (Gemini, Cursor, etc.)
+- Use descriptive tags that help categorize the resource
+
+## Styling Conventions
+- Primary color: Indigo (`indigo-600`)
+- Success/Answer color: Green (`green-600`)
+- Question numbers: Indigo bold
+- Cards: White background with subtle shadow and border
+- Hover effects: Use Tailwind's `group` and `group-hover` patterns
+
+## Footer Content
+- Content source: HKACE AI for Education WhatsApp 社群
+- Site builder: 10 教育
+- Include GitHub repository link
+
+## Commit Messages
+- Use clear, descriptive commit messages in English
+- Format: "Action: description of changes"
+- Examples:
+  - "Add new FAQ about X feature"
+  - "Update footer content"
+  - "Fix anchor scroll offset"
+
+## GitHub Pages Deployment
+- Base path is `/ai-resources-for-teachers/`
+- Use `import.meta.env.BASE_URL` for internal links
+- `.nojekyll` file required in `public/` directory
+- GitHub Actions automatically deploys on push to main
+
