@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: 20
           package-manager: npm@latest
+      - name: Add .nojekyll file
+        run: touch dist/.nojekyll
 
   deploy:
     needs: build
