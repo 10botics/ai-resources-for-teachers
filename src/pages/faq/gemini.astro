@@ -7,6 +7,11 @@ const faqs = [
     answer: "18 歲以下的帳戶無法使用 (Accounts under 18 do not have access)。"
   },
   {
+    question: "學生每天可以生成多少張圖片？",
+    answer: "使用 Nano Banana：每天最多 100 張圖片。使用 Nano Banana Pro：每天最多 3 張圖片。（資料來源：Google Workspace for Education 官方文檔）",
+    source: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DEducation"
+  },
+  {
     question: "Gemini 的對話記錄可以刪除嗎？",
     answer: "這取決於您使用的帳戶類型。個人帳戶 (Personal Account) 可以刪除對話記錄，但 Google Workspace 帳戶則不能刪除對話記錄。這並非 Workspace 管理員可以設定的功能，而是 Google Workspace 版本的限制。"
   },
@@ -53,7 +58,19 @@ const faqs = [
 					</h3>
 					<div class="text-slate-600 leading-relaxed flex gap-3 ml-8">
 						<span class="text-green-600 font-bold">A.</span>
-						<div>{faq.answer}</div>
+						<div>
+							{faq.answer}
+							{faq.source && (
+								<div class="mt-2 text-sm">
+									<a href={faq.source} target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+										</svg>
+										查看來源
+									</a>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			))}
