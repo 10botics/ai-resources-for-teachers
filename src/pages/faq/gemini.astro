@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "為什麼學生在 gemini.google.com 無法使用 Nano banana？",
+    answer: "18 歲以下的帳戶無法使用 (Accounts under 18 do not have access)。"
+  }
+];
+---
+
+<Layout title="Gemini FAQ">
+	<div class="max-w-3xl mx-auto">
+		<div class="mb-8">
+			<a href="/faq" class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
+				← 返回所有常見問題
+			</a>
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">Gemini 常見問題</h1>
+			<p class="text-xl text-slate-600">關於 Google Gemini 的常見問題</p>
+		</div>
+
+		<div class="space-y-4">
+			{faqs.map((faq) => (
+				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+					<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3 mb-3">
+						<span class="text-indigo-600 font-bold">Q.</span>
+						<span>{faq.question}</span>
+					</h3>
+					<div class="text-slate-600 leading-relaxed flex gap-3 ml-8">
+						<span class="text-green-600 font-bold">A.</span>
+						<div>{faq.answer}</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>
+

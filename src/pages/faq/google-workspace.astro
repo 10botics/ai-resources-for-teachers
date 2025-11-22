@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "AI 工具在教學上有什麼隱私安全注意事項？",
+    answer: "建議避免輸入學生的個人識別資料（PII）。教師應使用學校提供的教育版帳戶（如 Google Workspace for Education、Microsoft 365 Education），以獲得更好的資料保護。使用前請先了解各 AI 工具的資料使用政策。"
+  },
+  {
+    question: "哪些 AI 工具適合在課堂上使用？",
+    answer: "常見的 AI 工具包括：Gemini (Google)、ChatGPT (OpenAI)、Claude (Anthropic)、NotebookLM (Google)、Microsoft Copilot 等。選擇時需考慮：資料隱私、年齡限制、是否需要 VPN、以及是否符合學校政策。"
+  },
+  {
+    question: "如何教導學生正確使用 AI 工具？",
+    answer: "建議強調 AI 作為輔助工具的角色，而非替代思考。教導學生如何提出有效問題、驗證 AI 生成內容的準確性、以及適當引用 AI 協助。同時建立清晰的學術誠信指引。"
+  }
+];
+---
+
+<Layout title="Google Workspace FAQ">
+	<div class="max-w-3xl mx-auto">
+		<div class="mb-8">
+			<a href="/faq" class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
+				← 返回所有常見問題
+			</a>
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">Google Workspace 常見問題</h1>
+			<p class="text-xl text-slate-600">關於 Google Workspace 和 AI 工具的常見問題</p>
+		</div>
+
+		<div class="space-y-4">
+			{faqs.map((faq) => (
+				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+					<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3 mb-3">
+						<span class="text-indigo-600 font-bold">Q.</span>
+						<span>{faq.question}</span>
+					</h3>
+					<div class="text-slate-600 leading-relaxed flex gap-3 ml-8">
+						<span class="text-green-600 font-bold">A.</span>
+						<div>{faq.answer}</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>
+

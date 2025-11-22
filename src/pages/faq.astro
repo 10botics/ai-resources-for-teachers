@@ -1,26 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const faqs = [
+const faqCategories = [
   {
-    question: "為什麼學生在 gemini.google.com 無法使用 Nano banana？",
-    answer: "18 歲以下的帳戶無法使用 (Accounts under 18 do not have access)。"
+    category: "Google Workspace",
+    description: "關於 Google Workspace 和 AI 工具的常見問題",
+    link: "/faq/google-workspace",
+    icon: "🏢"
   },
   {
-    question: "如何存取 NotebookLM？",
-    answer: "在香港，目前您需要使用 VPN 才能存取 NotebookLM。"
+    category: "Gemini",
+    description: "關於 Google Gemini 的常見問題",
+    link: "/faq/gemini",
+    icon: "✨"
   },
   {
-    question: "AI 工具在教學上有什麼隱私安全注意事項？",
-    answer: "建議避免輸入學生的個人識別資料（PII）。教師應使用學校提供的教育版帳戶（如 Google Workspace for Education、Microsoft 365 Education），以獲得更好的資料保護。使用前請先了解各 AI 工具的資料使用政策。"
-  },
-  {
-    question: "哪些 AI 工具適合在課堂上使用？",
-    answer: "常見的 AI 工具包括：Gemini (Google)、ChatGPT (OpenAI)、Claude (Anthropic)、NotebookLM (Google)、Microsoft Copilot 等。選擇時需考慮：資料隱私、年齡限制、是否需要 VPN、以及是否符合學校政策。"
-  },
-  {
-    question: "如何教導學生正確使用 AI 工具？",
-    answer: "建議強調 AI 作為輔助工具的角色，而非替代思考。教導學生如何提出有效問題、驗證 AI 生成內容的準確性、以及適當引用 AI 協助。同時建立清晰的學術誠信指引。"
+    category: "NotebookLM",
+    description: "關於 Google NotebookLM 的常見問題",
+    link: "/faq/notebooklm",
+    icon: "📓"
   }
 ];
 ---
@@ -32,27 +30,22 @@ const faqs = [
 			<p class="text-xl text-slate-600">解答 ICT 教師在使用 AI 工具時常遇到的疑問</p>
 		</div>
 
-		<div class="space-y-4">
-			{faqs.map((faq) => (
-				<details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-					<summary class="flex justify-between items-center p-6 cursor-pointer list-none bg-white hover:bg-slate-50 transition-colors">
-						<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3">
-							<span class="text-indigo-600 font-bold">Q.</span>
-							{faq.question}
-						</h3>
-						<span class="transition-transform group-open:rotate-180">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-							</svg>
-						</span>
-					</summary>
-					<div class="px-6 pb-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
-						<div class="pt-4 flex gap-3">
-							<span class="text-green-600 font-bold">A.</span>
-							<div>{faq.answer}</div>
+		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{faqCategories.map((category) => (
+				<a href={category.link} class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-indigo-300 transition-all group">
+					<div class="flex flex-col h-full">
+						<div class="text-4xl mb-4">{category.icon}</div>
+						<h2 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">
+							{category.category}
+						</h2>
+						<p class="text-slate-600">
+							{category.description}
+						</p>
+						<div class="mt-4 text-indigo-600 font-medium flex items-center gap-2">
+							查看問題 →
 						</div>
 					</div>
-				</details>
+				</a>
 			))}
 		</div>
 
