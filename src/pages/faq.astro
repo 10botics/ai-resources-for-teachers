@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "為什麼學生在 gemini.google.com 無法使用 Nano banana？",
+    answer: "18 歲以下的帳戶無法使用 (Accounts under 18 do not have access)。"
+  },
+  {
+    question: "如何存取 NotebookLM？",
+    answer: "在香港，目前您需要使用 VPN 才能存取 NotebookLM。"
+  },
+  {
+    question: "Gemini 在教學上有什麼隱私安全注意事項？",
+    answer: "建議避免輸入學生的個人識別資料（PII）。教師應使用學校提供的 Google Workspace for Education 帳戶，以獲得更好的資料保護。"
+  }
+];
+---
+
+<Layout title="常見問題">
+	<div class="max-w-3xl mx-auto">
+		<div class="text-center mb-12">
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">常見問題 (FAQ)</h1>
+			<p class="text-xl text-slate-600">解答教師在使用 Gemini 時常遇到的疑問</p>
+		</div>
+
+		<div class="space-y-4">
+			{faqs.map((faq) => (
+				<details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+					<summary class="flex justify-between items-center p-6 cursor-pointer list-none bg-white hover:bg-slate-50 transition-colors">
+						<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3">
+							<span class="text-indigo-600 font-bold">Q.</span>
+							{faq.question}
+						</h3>
+						<span class="transition-transform group-open:rotate-180">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</span>
+					</summary>
+					<div class="px-6 pb-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 mt-4">
+						<div class="pt-4 flex gap-3">
+							<span class="text-green-600 font-bold">A.</span>
+							<div>{faq.answer}</div>
+						</div>
+					</div>
+				</details>
+			))}
+		</div>
+
+		<div class="mt-12 text-center text-slate-500 text-sm">
+			<p>找不到您的問題？歡迎在社群群組中提問！</p>
+		</div>
+	</div>
+</Layout>
+

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Mock data based on user description and typical awesome list content
+const resources = [
+  {
+    title: "Gemini Pro 3 Demo Site",
+    author: "Mr. B. Leung",
+    description: "包含 Integrated Science (植物細胞、微生態)、Biology (滲透作用)、Chemistry (原子軌域) 及 Physics (對流、比熱容量、光學等) 的教學演示。",
+    link: "https://qos-lkb.github.io/qos-lkb/",
+    tags: ["Science", "Demo", "Interactive"]
+  },
+  // Placeholder for more resources
+  {
+    title: "中文寫作評改助手",
+    author: "香港教師社群",
+    description: "利用 Gemini 分析學生作文並提供改進建議的 Prompt 集合。",
+    link: "#",
+    tags: ["Chinese", "Writing", "Prompt"]
+  },
+  {
+    title: "通識科/公社科 議題分析器",
+    author: "Demo Teacher",
+    description: "幫助學生從多角度分析社會議題的工具。",
+    link: "#",
+    tags: ["CS", "Analysis"]
+  }
+];
+---
+
+<Layout title="精選資源">
+	<div class="max-w-4xl mx-auto">
+		<div class="text-center mb-12">
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">Gemini 香港教師精彩資源</h1>
+			<p class="text-xl text-slate-600">收集香港教師利用 Gemini 製作的教學工具、演示及資源</p>
+		</div>
+
+		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{resources.map((item) => (
+				<a href={item.link} target="_blank" rel="noopener noreferrer" 
+				   class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-indigo-300 transition-all group">
+					<div class="flex flex-col h-full">
+						<h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">
+							{item.title}
+						</h3>
+						<p class="text-sm text-slate-500 mb-3">作者: {item.author}</p>
+						<p class="text-slate-600 mb-4 flex-grow">
+							{item.description}
+						</p>
+						<div class="flex flex-wrap gap-2 mt-auto">
+							{item.tags.map(tag => (
+								<span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs rounded-full font-medium">
+									#{tag}
+								</span>
+							))}
+						</div>
+					</div>
+				</a>
+			))}
+		</div>
+
+		<div class="mt-16 bg-indigo-50 rounded-xl p-8 text-center">
+			<h2 class="text-2xl font-bold text-indigo-900 mb-4">您也有好資源嗎？</h2>
+			<p class="text-indigo-700 mb-6">歡迎提交您的 Gemini 教學應用案例，與全港教師分享！</p>
+			<a href="https://github.com/your-repo/issues" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+				提交資源 (GitHub Issue)
+			</a>
+		</div>
+	</div>
+</Layout>
+
