@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://example.com', // We will update this later or user can update it
-  base: '/', // Change this to repository name if deploying to project page e.g. /repo-name/
+  site: 'https://10botics.github.io',
+  base: '/ai-resources-for-teachers/',
 });
 
