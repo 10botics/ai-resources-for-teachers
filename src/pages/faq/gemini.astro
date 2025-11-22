@@ -1,10 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
   {
     question: "為什麼學生在 gemini.google.com 無法使用 Nano banana？",
     answer: "18 歲以下的帳戶無法使用 (Accounts under 18 do not have access)。"
+  },
+  {
+    question: "Gemini 的對話記錄可以刪除嗎？",
+    answer: "這取決於您使用的帳戶類型。個人帳戶 (Personal Account) 可以刪除對話記錄，但 Google Workspace 帳戶則不能刪除對話記錄。這並非 Workspace 管理員可以設定的功能，而是 Google Workspace 版本的限制。"
+  },
+  {
+    question: "在香港使用 Gemini 需要 VPN 嗎？",
+    answer: "這取決於您使用的帳戶類型。個人帳戶 (Personal Account) 需要使用 VPN 才能存取 Gemini，但 Google Workspace for Education 和 Business 帳戶則不需要 VPN，可以直接存取。"
+  },
+  {
+    question: "學生和老師每天可以問 Gemini 多少個問題？",
+    answer: "大約每日上限 100 個問題，10 個 deep research 問題。Gemini 2.5 Flash 則可以無限提問。"
+  },
+  {
+    question: "我可以與學生分享我的 Gemini 對話或 Canvas 嗎？",
+    answer: "Google Workspace 帳戶無法直接分享 Gemini 對話或 Canvas。只有個人帳戶（Personal Account）才有分享功能。如需分享，可透過 Google Classroom 或將內容發佈到 GitHub Pages。"
+  },
+  {
+    question: "為什麼我在學校帳戶中看不到 Gemini Pro 3？",
+    answer: "請檢查學校 Google Workspace Admin 是否已啟用此功能，並確保設定為 \"Rapid release\" 模式。"
   }
 ];
 ---
@@ -12,7 +32,7 @@ const faqs = [
 <Layout title="Gemini FAQ">
 	<div class="max-w-3xl mx-auto">
 		<div class="mb-8">
-			<a href="/faq" class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
+			<a href={import.meta.env.BASE_URL + 'faq'} class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
 				← 返回所有常見問題
 			</a>
 			<h1 class="text-4xl font-bold text-slate-900 mb-4">Gemini 常見問題</h1>
@@ -20,10 +40,10 @@ const faqs = [
 		</div>
 
 		<div class="space-y-4">
-			{faqs.map((faq) => (
-				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+			{faqs.map((faq, index) => (
+				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6" id={`faq-${index + 1}`}>
 					<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3 mb-3">
-						<span class="text-indigo-600 font-bold">Q.</span>
+						<span class="text-indigo-600 font-bold">Q{index + 1}.</span>
 						<span>{faq.question}</span>
 					</h3>
 					<div class="text-slate-600 leading-relaxed flex gap-3 ml-8">

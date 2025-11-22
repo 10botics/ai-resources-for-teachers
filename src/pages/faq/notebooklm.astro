@@ -1,10 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
   {
-    question: "如何存取 NotebookLM？",
-    answer: "在香港，目前您需要使用 VPN 才能存取 NotebookLM。"
+    question: "在香港使用 NotebookLM 需要 VPN 嗎？",
+    answer: "是的，目前在香港存取 NotebookLM 需要使用 VPN。"
+  },
+  {
+    question: "NotebookLM 有付費版嗎？跟免費版有什麼分別？",
+    answer: "NotebookLM 有企業版（NotebookLM for Enterprise），需要額外付費購買 Google Cloud 授權。付費版可以在香港不需 VPN 使用，功能較完整。免費版需要 VPN 才能在香港使用。"
+  },
+  {
+    question: "NotebookLM 可以生成廣東話語音嗎？",
+    answer: "暫時 NotebookLM 不支援廣東話語音生成，只提供普通話（北京口音）和普通話（台灣口音）。"
   }
 ];
 ---
@@ -12,7 +20,7 @@ const faqs = [
 <Layout title="NotebookLM FAQ">
 	<div class="max-w-3xl mx-auto">
 		<div class="mb-8">
-			<a href="/faq" class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
+			<a href={import.meta.env.BASE_URL + 'faq'} class="text-indigo-600 hover:text-indigo-700 flex items-center gap-2 mb-4">
 				← 返回所有常見問題
 			</a>
 			<h1 class="text-4xl font-bold text-slate-900 mb-4">NotebookLM 常見問題</h1>
@@ -20,10 +28,10 @@ const faqs = [
 		</div>
 
 		<div class="space-y-4">
-			{faqs.map((faq) => (
-				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+			{faqs.map((faq, index) => (
+				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6" id={`faq-${index + 1}`}>
 					<h3 class="text-lg font-medium text-slate-800 flex items-start gap-3 mb-3">
-						<span class="text-indigo-600 font-bold">Q.</span>
+						<span class="text-indigo-600 font-bold">Q{index + 1}.</span>
 						<span>{faq.question}</span>
 					</h3>
 					<div class="text-slate-600 leading-relaxed flex gap-3 ml-8">

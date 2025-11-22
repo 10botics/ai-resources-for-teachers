@@ -27,9 +27,37 @@ const baseUrl = import.meta.env.BASE_URL;
 					<span>✨</span>
 					ICT 老師 AI 資源網
 				</a>
-				<div class="flex gap-6">
+				<div class="flex gap-6 items-center">
 					<a href={`${baseUrl}`} class="hover:text-indigo-600 transition-colors font-medium">精選列表</a>
-					<a href={`${baseUrl}faq`} class="hover:text-indigo-600 transition-colors font-medium">常見問題</a>
+					<div class="relative group">
+						<button class="hover:text-indigo-600 transition-colors font-medium flex items-center gap-1">
+							常見問題
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<div class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+							<a href={`${baseUrl}faq`} class="block px-4 py-3 hover:bg-slate-50 transition-colors first:rounded-t-lg">
+								<div class="font-medium text-slate-800">所有類別</div>
+								<div class="text-sm text-slate-500">查看所有常見問題</div>
+							</a>
+							<a href={`${baseUrl}faq/google-workspace`} class="block px-4 py-3 hover:bg-slate-50 transition-colors border-t border-slate-100">
+								<div class="font-medium text-slate-800 flex items-center gap-2">
+									<span>🏢</span> Google Workspace
+								</div>
+							</a>
+							<a href={`${baseUrl}faq/gemini`} class="block px-4 py-3 hover:bg-slate-50 transition-colors border-t border-slate-100">
+								<div class="font-medium text-slate-800 flex items-center gap-2">
+									<span>✨</span> Gemini
+								</div>
+							</a>
+							<a href={`${baseUrl}faq/notebooklm`} class="block px-4 py-3 hover:bg-slate-50 transition-colors border-t border-slate-100 last:rounded-b-lg">
+								<div class="font-medium text-slate-800 flex items-center gap-2">
+									<span>📓</span> NotebookLM
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</nav>
 		</header>
