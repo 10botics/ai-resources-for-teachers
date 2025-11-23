@@ -2,14 +2,267 @@
 import Layout from '../layouts/Layout.astro';
 
 const resources = [
-  // {
-  //   title: "Gemini Pro 3 Demo Site",
-  //   author: "Mr. B. Leung",
-  //   description: "包含 Integrated Science (植物細胞、微生態)、Biology (滲透作用)、Chemistry (原子軌域) 及 Physics (對流、比熱容量、光學等) 的教學演示。",
-  //   link: "https://qos-lkb.github.io/qos-lkb/",
-  //   github: "https://github.com/qos-lkb/qos-lkb",
-  //   tags: ["Science", "Demo", "Interactive"]
-  // },
+  // Integrated Science
+  {
+    title: "Plant Cell (植物細胞)",
+    author: "Bryan Leung",
+    description: "互動式植物細胞結構模擬，展示細胞壁、細胞膜、葉綠體等組成部分。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/unit4/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Integrated Science", "Biology", "Simulation"]
+  },
+  {
+    title: "Micro-Ecosystem (微生態)",
+    author: "Bryan Leung",
+    description: "微生態系統模擬，展示生物與環境的相互作用。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/unit7/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Integrated Science", "Ecology", "Simulation"]
+  },
+  {
+    title: "Bell Jar Model (鐘罩模型)",
+    author: "Bryan Leung",
+    description: "鐘罩實驗模型，展示氣壓與體積的關係。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/unit7b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Integrated Science", "Physics", "Simulation"]
+  },
+  
+  // Biology
+  {
+    title: "Osmosis (滲透作用)",
+    author: "Bryan Leung",
+    description: "滲透作用模擬，展示水分子通過半透膜的移動過程。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/osmosis/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Biology", "Simulation", "Cell"]
+  },
+  {
+    title: "Cell Membrane Permeability (細胞膜滲透性)",
+    author: "Bryan Leung",
+    description: "細胞膜滲透性模擬，展示不同物質通過細胞膜的能力。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/permeability/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Biology", "Simulation", "Cell"]
+  },
+  
+  // Chemistry
+  {
+    title: "Atomic Structure (原子結構)",
+    author: "Bryan Leung",
+    description: "原子結構模擬，展示質子、中子和電子的排列。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/atomic-structure/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Chemistry", "Simulation", "Atoms"]
+  },
+  {
+    title: "Relative Atomic Mass (相對原子質量)",
+    author: "Bryan Leung",
+    description: "相對原子質量計算模擬，展示同位素與原子量的關係。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/relative-atomic-mass/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Chemistry", "Simulation", "Atoms"]
+  },
+  {
+    title: "Electrolysis (電解)",
+    author: "Bryan Leung",
+    description: "電解過程模擬，展示電流通過溶液時的化學反應。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/electrolysis/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Chemistry", "Simulation", "Electrochemistry"]
+  },
+  {
+    title: "Atoms and their Orbitals (原子軌域)",
+    author: "Bryan Leung",
+    description: "原子軌域視覺化，展示電子在不同能級的分佈。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/orbitals/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Chemistry", "Simulation", "Quantum"]
+  },
+  
+  // Physics - Heat & Temperature
+  {
+    title: "Calibration of a Thermometer (溫度計校準)",
+    author: "Bryan Leung",
+    description: "溫度計校準過程模擬，展示定點溫度的重要性。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.01/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Temperature", "Simulation"]
+  },
+  {
+    title: "Clinical Thermometer (臨床溫度計)",
+    author: "Bryan Leung",
+    description: "臨床溫度計運作原理模擬。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.01b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Temperature", "Simulation"]
+  },
+  {
+    title: "Conduction (傳導)",
+    author: "Bryan Leung",
+    description: "熱傳導過程模擬，展示熱能在固體中的傳遞。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.02a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  {
+    title: "Convection (對流)",
+    author: "Bryan Leung",
+    description: "對流過程模擬，展示熱能在流體中的傳遞。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.02b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  {
+    title: "Radiation and Colour (輻射與顏色)",
+    author: "Bryan Leung",
+    description: "熱輻射與物體顏色關係模擬。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.02c/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  {
+    title: "Specific Heat Capacity (比熱容量)",
+    author: "Bryan Leung",
+    description: "比熱容量概念模擬，展示不同物質吸收熱能的能力。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.03a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  {
+    title: "Specific Heat Capacity 2 (比熱容量 2)",
+    author: "Bryan Leung",
+    description: "比熱容量進階模擬，包含計算與應用。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.03b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  {
+    title: "Thermal Equilibrium (熱平衡)",
+    author: "Bryan Leung",
+    description: "熱平衡狀態模擬，展示溫度平衡的過程。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/1.03c/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Heat", "Simulation"]
+  },
+  
+  // Physics - Optics
+  {
+    title: "Laws of Reflection (反射定律)",
+    author: "Bryan Leung",
+    description: "光的反射定律模擬，展示入射角與反射角的關係。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.01a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Plane Mirror Ray Diagram (平面鏡光路圖)",
+    author: "Bryan Leung",
+    description: "平面鏡成像光路圖模擬。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.01b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Analogy of Refraction (折射類比)",
+    author: "Bryan Leung",
+    description: "使用車輛模型類比光的折射現象。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.02a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Snell's Law (斯涅爾定律)",
+    author: "Bryan Leung",
+    description: "斯涅爾定律模擬，展示光在不同介質中的折射。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.02b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Dispersion (色散)",
+    author: "Bryan Leung",
+    description: "光的色散模擬，展示白光分解成七色光。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.02c/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Diffraction Grating (繞射光柵)",
+    author: "Bryan Leung",
+    description: "繞射光柵模擬，展示光的干涉與繞射現象。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.06a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  {
+    title: "Young's Double-Slit Experiment (楊氏雙縫實驗)",
+    author: "Bryan Leung",
+    description: "楊氏雙縫實驗模擬，展示光的波動性質。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/3.06b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Optics", "Simulation"]
+  },
+  
+  // Physics - Modern Physics
+  {
+    title: "Fraunhofer Lines (夫朗和斐譜線)",
+    author: "Bryan Leung",
+    description: "夫朗和斐譜線模擬，展示太陽光譜中的吸收線。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e1.04/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Astronomy", "Simulation"]
+  },
+  {
+    title: "Rutherford Scattering Experiment (拉塞福散射實驗)",
+    author: "Bryan Leung",
+    description: "拉塞福散射實驗模擬，展示原子核的發現過程。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e2.01a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Nuclear", "Simulation"]
+  },
+  {
+    title: "Photoelectric Effect (光電效應)",
+    author: "Bryan Leung",
+    description: "光電效應模擬，展示光的粒子性質。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e2.01b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Quantum", "Simulation"]
+  },
+  {
+    title: "Electron Transition (電子躍遷)",
+    author: "Bryan Leung",
+    description: "電子能級躍遷模擬，展示原子發光原理。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e2.02a/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Quantum", "Simulation"]
+  },
+  {
+    title: "Emission Line Spectra (發射光譜)",
+    author: "Bryan Leung",
+    description: "發射光譜模擬，展示不同元素的特徵光譜。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e2.02b/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Quantum", "Simulation"]
+  },
+  {
+    title: "Air-Conditioner (空調原理)",
+    author: "Bryan Leung",
+    description: "空調系統運作原理模擬。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e3.01/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Energy", "Simulation"]
+  },
+  {
+    title: "Wind Power (風力發電)",
+    author: "Bryan Leung",
+    description: "風力發電原理模擬，展示可再生能源應用。使用 Gemini 3 Pro 製作。",
+    link: "https://qos-lkb.github.io/e3.04/",
+    github: "https://github.com/qos-lkb/qos-lkb",
+    tags: ["Physics", "Energy", "Simulation"]
+  },
+  
+  // Other Projects
   {
     title: "香港大富翁",
     author: "Jonathan Tse",
@@ -22,15 +275,25 @@ const resources = [
 ---
 
 <Layout title="精選資源">
-	<div class="max-w-4xl mx-auto">
+	<div class="max-w-6xl mx-auto">
 		<div class="text-center mb-12">
 			<h1 class="text-4xl font-bold text-slate-900 mb-4">香港 ICT 老師 AI 資源網</h1>
 			<p class="text-xl text-slate-600">收集香港 ICT 教師利用 AI 工具（如 Gemini、ChatGPT、Claude 等）製作的教學工具、演示及資源</p>
 		</div>
 
-		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{resources.map((item) => (
-				<div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-indigo-300 transition-all group">
+		<!-- Tag Filter -->
+		<div class="mb-8">
+			<h2 class="text-lg font-semibold text-slate-700 mb-3">篩選科目：</h2>
+			<div class="flex flex-wrap gap-2" id="tag-filters">
+				<button data-tag="all" class="tag-filter active px-4 py-2 rounded-full font-medium transition-all bg-indigo-600 text-white hover:bg-indigo-700">
+					全部 (<span class="count"></span>)
+				</button>
+			</div>
+		</div>
+
+		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="resources-grid">
+			{resources.map((item, index) => (
+				<div class="resource-card bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-indigo-300 transition-all group" data-tags={item.tags.join(',')}>
 					<div class="flex flex-col h-full">
 						<h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">
 							{item.title}
@@ -74,5 +337,72 @@ const resources = [
 			</a>
 		</div>
 	</div>
+
+	<script>
+		// Get all unique tags from resources
+		const resourceCards = document.querySelectorAll('.resource-card');
+		const tagCounts = new Map();
+		
+		// Count resources per tag
+		resourceCards.forEach(card => {
+			const tags = card.getAttribute('data-tags')?.split(',') || [];
+			tags.forEach(tag => {
+				tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+			});
+		});
+
+		// Sort tags by count (descending) and then alphabetically
+		const sortedTags = Array.from(tagCounts.entries())
+			.sort((a, b) => {
+				if (b[1] !== a[1]) return b[1] - a[1]; // Sort by count
+				return a[0].localeCompare(b[0], 'zh-HK'); // Then alphabetically
+			});
+
+		// Create tag filter buttons
+		const tagFiltersContainer = document.getElementById('tag-filters');
+		const allButton = tagFiltersContainer?.querySelector('[data-tag="all"]');
+		
+		if (allButton) {
+			const allCount = allButton.querySelector('.count');
+			if (allCount) allCount.textContent = resourceCards.length.toString();
+		}
+
+		sortedTags.forEach(([tag, count]) => {
+			const button = document.createElement('button');
+			button.setAttribute('data-tag', tag);
+			button.className = 'tag-filter px-4 py-2 rounded-full font-medium transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+			button.innerHTML = `${tag} (<span class="count">${count}</span>)`;
+			tagFiltersContainer?.appendChild(button);
+		});
+
+		// Filter functionality
+		function filterResources(selectedTag: string) {
+			resourceCards.forEach(card => {
+				const tags = card.getAttribute('data-tags')?.split(',') || [];
+				if (selectedTag === 'all' || tags.includes(selectedTag)) {
+					card.classList.remove('hidden');
+				} else {
+					card.classList.add('hidden');
+				}
+			});
+
+			// Update active state
+			document.querySelectorAll('.tag-filter').forEach(btn => {
+				if (btn.getAttribute('data-tag') === selectedTag) {
+					btn.className = 'tag-filter active px-4 py-2 rounded-full font-medium transition-all bg-indigo-600 text-white hover:bg-indigo-700';
+				} else {
+					btn.className = 'tag-filter px-4 py-2 rounded-full font-medium transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+				}
+			});
+		}
+
+		// Add click handlers
+		document.querySelectorAll('.tag-filter').forEach(button => {
+			button.addEventListener('click', () => {
+				const tag = button.getAttribute('data-tag') || 'all';
+				filterResources(tag);
+			});
+		});
+	</script>
 </Layout>
 
